@@ -1,0 +1,2 @@
+Path in MSYS2 MinGW64
+cd /C/Users/Peter/source/repos/CleverNameDescribingAPlatformer
