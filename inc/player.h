@@ -15,7 +15,7 @@ class Player: public Dynamic
     void update(sf::Time delta) override;
     void render(sf::RenderWindow& window) override;
     void movement(sf::Time delta) override;
-    void animation(sf::Time delta);
+    void animation(sf::Time delta) override;
 
     private:
     float timer;

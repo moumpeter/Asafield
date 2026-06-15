@@ -8,6 +8,7 @@
 #include <vector>
 #include "game_object.h"
 #include "player.h"
+#include "enemy.h"
 
 class State
 {
@@ -36,6 +37,7 @@ class GameState : public State
     std::vector<GameObject*> projectiles;
     GameObject* player;
     */
+    std::vector<GameObject*> gameobjects;
 };
 
 class MenuState : public State

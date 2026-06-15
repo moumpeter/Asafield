@@ -6,14 +6,32 @@ class Enemy: public Dynamic
 {
     public:
     //constructors
-    Enemy();
+    Enemy(const std::string& file_path, float width, float height, sf::Vector2f pos, float speed);
 
 
     //functions
-    void handle(const sf::Event&) override;
-    void update(sf::Time, std::vector<GameObject*>&) override;
-    void render(sf::RenderWindow&) override;
 
+
+};
+class BirdEnemy
+    : public Enemy
+{
+public:
+    //constructors
+    BirdEnemy(const std::string& file_path, float width, float height, sf::Vector2f pos, float speed, float radius);
+
+    // functions
+    void handle(const sf::Event&) override;
+    void update(sf::Time) override;
+    void render(sf::RenderWindow&) override;
+    void animation(sf::Time) override;
+    void movement(sf::Time) override;
+
+private:
+    float radius;
+    float timer;
+    float direction;
+    sf::Vector2f start_pos;
 
 };
 

@@ -16,6 +16,7 @@ class Dynamic : public GameObject
     //functions
 
     virtual void movement(sf::Time delta) = 0;
+    virtual void animation(sf::Time delta) = 0;
 
 
     //virtual void animation(); // maybe needs to be a class with a vector of textures as argument

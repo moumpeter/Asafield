@@ -6,13 +6,14 @@ GameState::GameState()
 {  
     
     // magic numbers as of right now need to use json to fix this. 
-    p1 = new Player{"textures/Character.png", 64*4, 64*4, {200, 200}, 200};
+    p1 = new Player{"textures/Character.png", 64*2, 64*2, {200, 200}, 200};
     /*  TODO: Need to make a camera follow player.
     sf::Vector2u screen_size{ sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height};
     sf::Vector2f screen_size_f{screen_size};
     view(p1 -> get_pos(), screen_size_f);
     //player1View.setViewport(sf::FloatRect({0.f, 0.f}, {0.5f, 1.f}));
     */
+    gameobjects.push_back(new BirdEnemy{ "textures/Bird/Bird_4.png", 64 * 2, 64 * 2, {400,200}, 150, 300 });
 
     
    
@@ -25,13 +26,12 @@ GameState::GameState()
 GameState::~GameState()
 {
     
-    /*while (!gameobjects.empty())
+    while (!gameobjects.empty())
     {
         delete gameobjects.back();
         gameobjects.pop_back();
     }
-   
-        */
+
     delete p1;
 
 }
@@ -69,6 +69,10 @@ void GameState::update(sf::Time delta)
         
     }
     */
+    for (auto enemy : gameobjects)
+    {
+        enemy->update(delta);
+    }
 
     // TODO: Kolla kollisioner
     // for ()
@@ -109,6 +113,10 @@ void GameState::render(sf::RenderWindow& window)
     
     */
    p1 -> render(window);
+   for (auto enemy : gameobjects)
+   {
+       enemy->render(window);
+   }
    //window.setView(view);
 }
 
