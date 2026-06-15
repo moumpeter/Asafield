@@ -1,0 +1,12 @@
+{
+    "player" :
+    [{
+        "file_path": "textures/Character.png" ,
+        "width" : 64,
+        "height" : 64,
+        "pos" : [200, 200],
+        "speed" : 200
+    }],
+    "enemy" : 
+    
+}
